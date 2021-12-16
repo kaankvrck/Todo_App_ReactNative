@@ -1,7 +1,9 @@
 import type {Node} from 'react';
-import React from 'react';
+import React, {useState} from 'react';
 import Task from './components/Task.js';
+
 import {
+  Keyboard,
   Platform,
   SafeAreaView,
   ScrollView,
@@ -14,17 +16,44 @@ import {
 import KeyboardAvoidingView from 'react-native/Libraries/Components/Keyboard/KeyboardAvoidingView';
 
 const App: () => Node = () => {
+  const [task, setTask] = useState();
+  const [taskItems, setTaskItems] = useState([]);
+
+  const handleAddTask = () => {
+    Keyboard.dismiss();
+    setTaskItems([...taskItems, task]);
+    setTask(null);
+  };
+  const completeTask = index => {
+    let itemsCopy = [...taskItems];
+    itemsCopy.splice(index, 1);
+    setTaskItems(itemsCopy);
+  };
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.sectionContainer}>
-        <ScrollView contentInsetAdjustmentBehavior="automatic">
+        <ScrollView
+          contentInsetAdjustmentBehavior="automatic"
+          contentContainerStyle={{
+            flexGrow: 1,
+          }}
+          keyboardShouldPersistTaps="handled">
           {/*Main Title for Todo app */}
           <View style={styles.tasksWrapper}>
             <Text style={styles.sectionTitle}> What Should I Do Today</Text>
             <View style={styles.items}>
               {/*This area for adding tasks*/}
-              <Task text={'Hi'} />
-              <Task text={'Naber'} />
+
+              {taskItems.map((item, index) => {
+                return (
+                  <TouchableOpacity
+                    key={index}
+                    onPress={() => completeTask(index)}>
+                    <Task text={item} />
+                  </TouchableOpacity>
+                );
+              })}
             </View>
           </View>
         </ScrollView>
@@ -35,8 +64,10 @@ const App: () => Node = () => {
           <TextInput
             style={styles.textInput}
             placeholder={'Write your tasks for today'}
+            value={task}
+            onChangeText={text => setTask(text)}
           />
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => handleAddTask()}>
             <View style={styles.addButton}>
               <Text>+</Text>
             </View>
