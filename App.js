@@ -10,15 +10,11 @@ import {
   View,
 } from 'react-native';
 
-
-
 const App: () => Node = () => {
-
   return (
     <SafeAreaView style={styles.SafeArea}>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-
-
+        <View />
       </ScrollView>
     </SafeAreaView>
   );
