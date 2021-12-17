@@ -14,7 +14,7 @@
 
 - run `npm install` or `yarn install` on terminal
 
-## Run on Device
+### Run on Device
 
 - run `react-native run-android` or `react-native run-io` to run on device or emulator
   - if your IDE not started react native you can use `react-native start` code on your terminal
