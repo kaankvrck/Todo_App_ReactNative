@@ -20,5 +20,5 @@
   - if your IDE not started react native you can use `npx react-native start` code on your terminal
 
 ## Dependencies
-  - [react-native-vector-icons]("https://www.npmjs.com/package/react-native-vector-icons")
+  - [react-native-vector-icons](https://www.npmjs.com/package/react-native-vector-icons)
   
