@@ -1,6 +1,7 @@
 import type {Node} from 'react';
 import React, {useState} from 'react';
 import Task from './components/Task.js';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 import {
   Keyboard,
@@ -44,7 +45,6 @@ const App: () => Node = () => {
             <Text style={styles.sectionTitle}> What Should I Do Today</Text>
             <View style={styles.items}>
               {/*This area for adding tasks*/}
-
               {taskItems.map((item, index) => {
                 return (
                   <TouchableOpacity
@@ -68,9 +68,7 @@ const App: () => Node = () => {
             onChangeText={text => setTask(text)}
           />
           <TouchableOpacity onPress={() => handleAddTask()}>
-            <View style={styles.addButton}>
-              <Text>+</Text>
-            </View>
+            <Icon name="pluscircleo" size={50} color="grey" />
           </TouchableOpacity>
         </KeyboardAvoidingView>
       </View>
@@ -107,23 +105,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   textInput: {
-    addingVertical: 15,
-    paddingHorizontal: 15,
+    paddingHorizontal: 20,
     backgroundColor: '#FFF',
     borderRadius: 60,
     borderColor: '#C0C0C0',
     borderWidth: 1,
-    width: 250,
-  },
-  addButton: {
-    width: 60,
-    height: 60,
-    backgroundColor: '#FFF',
-    borderRadius: 60,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderColor: '#C0C0C0',
-    borderWidth: 1,
+    width: 300,
   },
 });
 
