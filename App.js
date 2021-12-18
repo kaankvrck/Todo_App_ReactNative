@@ -57,6 +57,8 @@ const App: () => Node = () => {
             </View>
           </View>
         </ScrollView>
+      </View>
+      <View style={styles.textContainer}>
         {/*Write task for Todo app*/}
         <KeyboardAvoidingView
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -79,9 +81,12 @@ const App: () => Node = () => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#E8EAED',
   },
   sectionContainer: {
+    flex: 5,
+    backgroundColor: '#E8EAED',
+  },
+  textContainer: {
     flex: 1,
     backgroundColor: '#E8EAED',
   },
