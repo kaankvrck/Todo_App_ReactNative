@@ -16,8 +16,8 @@
 
 ### Run on Device
 
-- run `react-native run-android` or `react-native run-io` to run on device or emulator
-  - if your IDE not started react native you can use `react-native start` code on your terminal
+- run `npx react-native run-android` or `npx react-native run-io` to run on device or emulator
+  - if your IDE not started react native you can use `npx react-native start` code on your terminal
   
 
   
