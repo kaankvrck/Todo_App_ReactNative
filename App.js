@@ -64,6 +64,8 @@ const App: () => Node = () => {
         style={styles.writeWrapper}>
         <TextInput
           style={styles.textInput}
+          maxLength={150}
+          multiline={true}
           placeholder={'Write your tasks for today'}
           value={task}
           onChangeText={text => setTask(text)}
@@ -113,6 +115,7 @@ const styles = StyleSheet.create({
     borderColor: '#C0C0C0',
     borderWidth: 1,
     width: 300,
+    height: 50,
   },
 });
 
