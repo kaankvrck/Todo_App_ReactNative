@@ -58,22 +58,20 @@ const App: () => Node = () => {
           </View>
         </ScrollView>
       </View>
-      <View style={styles.textContainer}>
-        {/*Write task for Todo app*/}
-        <KeyboardAvoidingView
-          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-          style={styles.writeWrapper}>
-          <TextInput
-            style={styles.textInput}
-            placeholder={'Write your tasks for today'}
-            value={task}
-            onChangeText={text => setTask(text)}
-          />
-          <TouchableOpacity onPress={() => handleAddTask()}>
-            <Icon name="pluscircleo" size={50} color="grey" />
-          </TouchableOpacity>
-        </KeyboardAvoidingView>
-      </View>
+      {/*Write task for Todo app*/}
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        style={styles.writeWrapper}>
+        <TextInput
+          style={styles.textInput}
+          placeholder={'Write your tasks for today'}
+          value={task}
+          onChangeText={text => setTask(text)}
+        />
+        <TouchableOpacity onPress={() => handleAddTask()}>
+          <Icon name="pluscircleo" size={50} color="grey" />
+        </TouchableOpacity>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 };
@@ -81,13 +79,10 @@ const App: () => Node = () => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
+    backgroundColor: '#E8EAED',
   },
   sectionContainer: {
     flex: 5,
-    backgroundColor: '#E8EAED',
-  },
-  textContainer: {
-    flex: 1,
     backgroundColor: '#E8EAED',
   },
   sectionTitle: {
@@ -103,11 +98,13 @@ const styles = StyleSheet.create({
   },
   writeWrapper: {
     position: 'absolute',
-    bottom: 60,
+    bottom: 20,
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
+    flex: 1,
+    backgroundColor: '#E8EAED',
   },
   textInput: {
     paddingHorizontal: 20,
