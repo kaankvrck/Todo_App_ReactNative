@@ -1,14 +1,29 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Task = props => {
   return (
     <View style={styles.item}>
-      <View style={styles.itemLeft}>
-        <TouchableOpacity style={styles.itemButton} />
-        <Text style={styles.itemText}>{props.text}</Text>
-      </View>
-      <View style={styles.itemRight} />
+      <Icon
+        name={
+          props.todo.isChecked
+            ? 'checkbox-marked-circle-outline'
+            : 'checkbox-blank-circle-outline'
+        }
+        style={styles.leading}
+        size={20}
+        color={'red'}
+        onPress={() => props.checkTodo(props.todo.key)}
+      />
+      <Text style={styles.itemText}>{props.todo.name}</Text>
+      <Icon
+        name={'delete'}
+        style={styles.deleteButton}
+        size={20}
+        color={'red'}
+        onPress={() => props.deleteTodo(props.todo.key)}
+      />
     </View>
   );
 };
@@ -38,13 +53,6 @@ const styles = StyleSheet.create({
   },
   itemText: {
     maxWidth: '80%',
-  },
-  itemRight: {
-    width: 12,
-    height: 12,
-    borderColor: '#5583f6',
-    borderWidth: 2,
-    borderRadius: 5,
   },
 });
 
