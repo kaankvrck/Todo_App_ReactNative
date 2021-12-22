@@ -1,7 +1,7 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import {Text} from 'native-base';
 const Task = props => {
   return (
     <View style={styles.item}>
@@ -13,15 +13,22 @@ const Task = props => {
         }
         style={styles.leading}
         size={20}
-        color={'red'}
+        color={'#3700B3'}
         onPress={() => props.checkTodo(props.todo.key)}
       />
-      <Text style={styles.itemText}>{props.todo.name}</Text>
+      <Text
+        strikeThrough={props.todo.isChecked}
+        style={styles.itemText}
+        _light={{
+          color: props.todo.isChecked ? 'gray.400' : 'coolGray.800',
+        }}>
+        {props.todo.name}
+      </Text>
       <Icon
         name={'delete'}
         style={styles.deleteButton}
         size={20}
-        color={'red'}
+        color={'black'}
         onPress={() => props.deleteTodo(props.todo.key)}
       />
     </View>
@@ -36,7 +43,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: 10,
   },
   itemLeft: {
     flexDirection: 'row',
@@ -53,6 +60,7 @@ const styles = StyleSheet.create({
   },
   itemText: {
     maxWidth: '80%',
+    textAlign: 'left',
   },
 });
 
