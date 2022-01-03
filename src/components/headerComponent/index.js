@@ -1,7 +1,16 @@
 import React from 'react';
-import {HStack, Box, StatusBar, Button, Text} from 'native-base';
+import {
+  Box,
+  Button,
+  HStack,
+  Menu,
+  StatusBar,
+  Text,
+  Pressable,
+} from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import {StyleSheet} from 'react-native';
+import * as fromBody from '../bodyComponent/index';
 export const HeaderComponent = () => {
   return (
     <>
@@ -28,13 +37,41 @@ export const HeaderComponent = () => {
             TODO APP
           </Text>
         </HStack>
-        <Button variant={'ghost'}>
-          <HStack space="3">
-            <Icon name={'angle-down'} size={30} />
-          </HStack>
-        </Button>
+
+        <HStack space="3">
+          <Menu
+            w="190"
+            trigger={triggerProps => {
+              return (
+                <Pressable
+                  accessibilityLabel="More options menu"
+                  {...triggerProps}>
+                  <Icon name={'angle-down'} size={30} />
+                </Pressable>
+              );
+            }}>
+            <Menu.Item onPress={() => {}} style={styles.menuItem}>
+              Delete All
+              <Icon name={'trash-o'} size={20} />
+            </Menu.Item>
+            <Menu.Item style={styles.menuItem} isDisabled>
+              Undo Task
+              <Icon name={'repeat'} size={20} />
+            </Menu.Item>
+            <Menu.Item style={styles.menuItem} isDisabled>
+              Archive
+              <Icon name={'archive'} size={20} />
+            </Menu.Item>
+          </Menu>
+        </HStack>
       </HStack>
     </>
   );
 };
+const styles = StyleSheet.create({
+  menuItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+});
 export default HeaderComponent;
