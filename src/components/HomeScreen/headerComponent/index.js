@@ -10,7 +10,7 @@ import {
 } from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {StyleSheet} from 'react-native';
-import * as fromBody from '../bodyComponent/index';
+
 export const HeaderComponent = () => {
   return (
     <>

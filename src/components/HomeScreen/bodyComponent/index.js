@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Box, HStack, KeyboardAvoidingView, ScrollView} from 'native-base';
 import Icon from 'react-native-vector-icons/AntDesign';
-import Task from '../Task';
+import Task from '../../Task';
 import {
   Keyboard,
   Platform,

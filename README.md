@@ -12,12 +12,13 @@
 
 ## Installation
 
-- run `npm install` or `yarn install` on terminal
+- run `npm install` or `yarn install` on terminal.
 
 ### Run on Device
 
-- run `npx react-native run-android` or `npx react-native run-io` to run on device or emulator
-  - if your IDE not started react native you can use `npx react-native start` code on your terminal
+- run `npx react-native run-android` or `npx react-native run-io` to run on device or emulator.
+  - if your IDE not started react native you can use `npx react-native start` code on your terminal.
+  - if you want to use in the ios emulator you have to use `npx pod-install ios` code on your terminal.
 
 ## Dependencies
   - [react-native-vector-icons](https://www.npmjs.com/package/react-native-vector-icons)
