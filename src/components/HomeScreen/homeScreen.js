@@ -2,7 +2,7 @@ import React from 'react';
 import HeaderComponent from './headerComponent';
 import BodyComponent from './bodyComponent';
 
-export const HomeScreen = () => {
+export const HomeScreen = ({navigation}) => {
   return (
     <>
       <HeaderComponent />
