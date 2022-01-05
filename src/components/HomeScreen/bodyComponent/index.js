@@ -1,5 +1,11 @@
 import React, {useState} from 'react';
-import {Box, HStack, KeyboardAvoidingView, ScrollView} from 'native-base';
+import {
+  Box,
+  HStack,
+  KeyboardAvoidingView,
+  ScrollView,
+  TextArea,
+} from 'native-base';
 import Icon from 'react-native-vector-icons/AntDesign';
 import Task from '../../Task';
 import {
@@ -88,7 +94,7 @@ export const BodyComponent = () => {
         <HStack>
           <TextInput
             style={styles.textInput}
-            maxLength={150}
+            maxLength={200}
             multiline={true}
             placeholder={'Write your tasks for today'}
             value={task}
@@ -97,7 +103,7 @@ export const BodyComponent = () => {
         </HStack>
         <HStack>
           <TouchableOpacity onPress={() => handleAddTask()}>
-            <Icon name="pluscircleo" size={50} color="#3700B3" />
+            <Icon name="pluscircleo" size={50} color="#AD40AF" />
           </TouchableOpacity>
         </HStack>
       </KeyboardAvoidingView>
@@ -112,7 +118,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#fff',
   },
   textInput: {
     paddingHorizontal: 20,
@@ -121,7 +126,7 @@ const styles = StyleSheet.create({
     borderColor: '#C0C0C0',
     borderWidth: 1,
     width: 300,
-    height: 50,
+    height: 70,
   },
 });
 export default BodyComponent;

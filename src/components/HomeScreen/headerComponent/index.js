@@ -15,9 +15,9 @@ export const HeaderComponent = () => {
   return (
     <>
       <StatusBar backgroundColor="#3700B3" barStyle="light-content" />
-      <Box safeAreaTop={'10'} backgroundColor="#6200ee" />
+      <Box safeAreaTop={'10'} backgroundColor="#AD40AF" />
       <HStack
-        bg="#6200ee"
+        bg="#AD40AF"
         px="5"
         py="5"
         justifyContent="space-between"

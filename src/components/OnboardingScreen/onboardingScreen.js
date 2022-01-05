@@ -12,7 +12,7 @@ export const OnboardingScreen = ({navigation}) => {
           alignItems: 'center',
           backgroundColor: '#fff',
         }}>
-        <View style={{marginTop: 20}}>
+        <View style={{marginTop: 60}}>
           <Text
             style={{
               fontWeight: 'bold',
@@ -28,7 +28,10 @@ export const OnboardingScreen = ({navigation}) => {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <Image />
+          <Image
+            source={require('../../../assets/schedule.png')}
+            style={{height: 240, width: 240}}
+          />
         </View>
         <TouchableOpacity
           style={{

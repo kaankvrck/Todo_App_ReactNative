@@ -28,7 +28,7 @@ const Task = props => {
               : 'checkbox-blank-circle-outline'
           }
           size={20}
-          color={'#3700B3'}
+          color={'#AD40AF'}
           onPress={() => props.checkTodo(props.todo.key)}
         />
       </HStack>
