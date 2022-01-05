@@ -24,7 +24,7 @@ export const HeaderComponent = () => {
         alignItems="center">
         <Button variant={'ghost'}>
           <HStack space="3" alignItems="center">
-            <Icon name={'bars'} size={30} />
+            <Icon name={'bars'} size={30} color="#20315f"/>
           </HStack>
         </Button>
         <HStack space={'3'}>
@@ -46,21 +46,21 @@ export const HeaderComponent = () => {
                 <Pressable
                   accessibilityLabel="More options menu"
                   {...triggerProps}>
-                  <Icon name={'angle-down'} size={30} />
+                  <Icon name={'angle-down'} size={30} color="#20315f"/>
                 </Pressable>
               );
             }}>
             <Menu.Item onPress={() => {}} style={styles.menuItem}>
               Delete All
-              <Icon name={'trash-o'} size={20} />
+              <Icon name={'trash-o'} size={20} color="#20315f" />
             </Menu.Item>
             <Menu.Item style={styles.menuItem} isDisabled>
               Undo Task
-              <Icon name={'repeat'} size={20} />
+              <Icon name={'repeat'} size={20} color="#20315f" />
             </Menu.Item>
             <Menu.Item style={styles.menuItem} isDisabled>
               Archive
-              <Icon name={'archive'} size={20} />
+              <Icon name={'archive'} size={20} color="#20315f" />
             </Menu.Item>
           </Menu>
         </HStack>

@@ -48,7 +48,7 @@ const Task = props => {
         <Icon
           name={'delete'}
           size={20}
-          color={'black'}
+          color={'#20315f'}
           onPress={() => giveAlert()}
         />
       </HStack>
