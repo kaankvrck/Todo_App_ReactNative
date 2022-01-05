@@ -14,8 +14,9 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "Todo_App_ReactNative";
   }
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
+  }
 }
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-  super.onCreate(null);
-}
+
